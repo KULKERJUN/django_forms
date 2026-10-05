@@ -1,0 +1,32 @@
+{% extends 'master/base.html' %}
+
+
+{% block title %}
+    Home
+{% endblock title %}
+
+
+{% block block1 %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Image</th>
+                <th>Author Name</th>
+                <th>Publish Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            {% for data in data  %}
+                <td>{{forloop.counter}}</td>
+                <td>{{data.title}}</td>
+                <td><img src="{{data.blog_image.url}}" width=50px alt=""></td>
+                <td>{{data.author_name}}</td>
+                <td>{{ data.publish_date|date:"Y m d" }}</td>
+            {% endfor %}
+                
+        </tbody>
+    </table>
+{% endblock block1 %}
