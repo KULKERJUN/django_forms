@@ -1,0 +1,18 @@
+{% extends 'master/base.html' %}
+
+
+{% block title %}
+    Blog Edit
+{% endblock title %}
+    
+
+
+{% block block1 %}
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form_data}}
+    <button type="submit">Edit</button>
+</form>
+    
+{% endblock block1 %}
+    
